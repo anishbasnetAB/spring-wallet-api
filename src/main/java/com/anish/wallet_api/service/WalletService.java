@@ -127,7 +127,7 @@ public class WalletService {
         }
 
         if (wallet.getBalance().compareTo(BigDecimal.ZERO) != 0) {
-            throw new IllegalArgumentException(
+            throw new InvalidWalletStateException(
                     "Amount must be 0 before account closing."
             );
         }

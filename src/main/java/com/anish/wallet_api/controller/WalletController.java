@@ -57,7 +57,7 @@ public class WalletController {
         return ResponseEntity.ok(response);
     }
 
-    @PostMapping("/{id}/withdrawls")
+    @PostMapping("/{id}/withdrawals")
     public ResponseEntity<WalletResponse> withdraw(
             @PathVariable Long id,
             @Valid @RequestBody MoneyOperationRequest request
