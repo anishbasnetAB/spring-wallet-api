@@ -9,11 +9,15 @@ import java.math.BigDecimal;
 
 public class CreateWalletRequest {
 
-    @NotBlank
+    @NotBlank(message = "Owner name is required")
     private String ownerName;
 
-    @NotNull
-    @DecimalMin(value = "0.00", inclusive = true)
+    @NotNull(message = "Opening balance is required")
+    @DecimalMin(
+            value = "0.00",
+            inclusive = true,
+            message = "Opening balance cannot be negative"
+    )
     private BigDecimal openingBalance;
 
     public String getOwnerName() {
@@ -35,3 +39,4 @@ public class CreateWalletRequest {
     public CreateWalletRequest() {
     }
 }
+
